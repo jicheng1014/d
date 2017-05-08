@@ -17,6 +17,11 @@ pipeline {
           "flow3": {
             echo 'aaaaa'
             
+          },
+          "AA": {
+            sh '''sleep 10s
+echo "1"'''
+            
           }
         )
       }
