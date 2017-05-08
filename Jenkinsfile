@@ -3,8 +3,18 @@ pipeline {
   stages {
     stage('flow1') {
       steps {
-        sh 'echo "hello"'
-        sleep 10
+        parallel(
+          "flow1": {
+            sh 'echo "hello"'
+            sleep 10
+            
+          },
+          "flow2": {
+            sh 'echo "1"'
+            sh 'echo "2"'
+            
+          }
+        )
       }
     }
   }
