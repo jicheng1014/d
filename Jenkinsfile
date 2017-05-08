@@ -13,6 +13,38 @@ pipeline {
             sh 'echo "1"'
             sh 'echo "2"'
             
+          },
+          "flow3": {
+            echo 'aaaaa'
+            
+          }
+        )
+      }
+    }
+    stage('flow4') {
+      steps {
+        parallel(
+          "flow4": {
+            sh 'echo "1"'
+            
+          },
+          "flow5": {
+            echo '1111'
+            
+          }
+        )
+      }
+    }
+    stage('flow6') {
+      steps {
+        parallel(
+          "flow6": {
+            echo '1'
+            
+          },
+          "flow7": {
+            echo '1111'
+            
           }
         )
       }
